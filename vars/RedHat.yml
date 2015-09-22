@@ -15,3 +15,11 @@ packages:
   - pandoc
   - ctags
   - httrack
+  - keepassx
+  - redshift
+  - remmina
+  - vagrant
+  - gsmartcontrol
+  - pgadmin3
+  - libvirt-daemon-vbox
+  - RemoteBox

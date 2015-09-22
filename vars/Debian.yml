@@ -15,3 +15,9 @@ packages:
   - pandoc
   - exuberant-ctags
   - httrack
+  - keepassx
+  - redshift
+  - remmina
+  - vagrant
+  - gsmartcontrol
+  - pgadmin3

@@ -29,6 +29,14 @@ packages:
   - pandoc
   - ctags
   - httrack
+  - keepassx
+  - redshift
+  - remmina
+  - vagrant
+  - gsmartcontrol
+  - pgadmin3
+  - libvirt-daemon-vbox
+  - RemoteBox
 ```
 
 On debian derivatives:
@@ -49,7 +57,16 @@ packages:
   - pandoc
   - exuberant-ctags
   - httrack
+  - keepassx
+  - gtk-redshift
+  - remmina
+  - vagrant
+  - gsmartcontrol
+  - pgadmin3
+  - virtualbox
 ```
+
+Note: the last 6 packages are not tested on debian
 
 Dependencies
 ------------
