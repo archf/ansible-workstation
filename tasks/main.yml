@@ -1,0 +1,13 @@
+---
+# file: tasks/main.yml
+
+# specify the packages and the packager to use
+- name: load OS specific variables (see ../vars/*)
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: install python3 packages
+  action: "{{ ansible_pkg_mgr }} pkg={{ item }} state=latest"
+  with_items: packages
+
+- name: install entr (a filesystem watcher)
+  script: install_entr.sh

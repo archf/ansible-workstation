@@ -1,0 +1,17 @@
+---
+# packager: yum or dnf
+packages:
+  - python3-ipython
+  - python3-ipdb
+  - python3-devel
+  - python-pip
+  - inotify-tools-devel
+  - urlview
+  - workrave
+  - pidgin
+  - the_silver_searcher
+  - keychain
+  - xsel
+  - pandoc
+  - ctags
+  - httrack

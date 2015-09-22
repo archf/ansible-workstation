@@ -1,0 +1,17 @@
+---
+# packager: apt
+packages:
+  - ipython3
+  - python-dev
+  - ipdb
+  - python-pip
+  - libinotifytools-dev
+  - urlview
+  - workrave
+  - pidgin
+  - the_silver_searcher
+  - keychain
+  - xsel
+  - pandoc
+  - exuberant-ctags
+  - httrack
