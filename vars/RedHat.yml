@@ -22,4 +22,9 @@ packages:
   - gsmartcontrol
   - pgadmin3
   - libvirt-daemon-vbox
-  - RemoteBox
+  - dkms
+  - gcc
+  # for virtualbox
+  # - RemoteBox
+  # - kernel-headers
+  # - kernel-devel
