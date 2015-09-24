@@ -24,6 +24,8 @@ packages:
   - libvirt-daemon-vbox
   - dkms
   - gcc
+  - wireshark
+  - wireshark-gnome
   # for virtualbox
   # - RemoteBox
   # - kernel-headers
