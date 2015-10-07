@@ -21,3 +21,5 @@ packages:
   - vagrant
   - gsmartcontrol
   - pgadmin3
+  - gcc
+  - vagrant

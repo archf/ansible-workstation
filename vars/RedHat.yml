@@ -26,6 +26,11 @@ packages:
   - gcc
   - wireshark
   - wireshark-gnome
+  - vagrant
+  - vagrant-lxc
+  - lxc
+  - lxc-extra
+  - lxc-templates
   # for virtualbox
   # - RemoteBox
   # - kernel-headers
