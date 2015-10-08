@@ -3,13 +3,14 @@
 packages:
   - ipython3
   - python-dev
-  - ipdb
+  - python-ipdb
+  - python3-ipdb
   - python-pip
   - libinotifytools-dev
   - urlview
   - workrave
   - pidgin
-  - the_silver_searcher
+  - silversearcher-ag
   - keychain
   - xsel
   - pandoc
@@ -23,3 +24,8 @@ packages:
   - pgadmin3
   - gcc
   - vagrant
+  - wireshark
+  - gitk
+  - entr
+
+dumpcap_path: /usr/bin/dumpcap

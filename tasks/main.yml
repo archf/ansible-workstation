@@ -11,13 +11,14 @@
 
 - name: install entr (a filesystem watcher)
   script: install_entr.sh
+  when: ansible_os_family != 'Debian'
 
 ## created by default when installing package
 # - name: create a wireshark group
 #   group: name=wireshark state=present
 
 - name: change dumpcap capabilities CAP_NET_RAW+eip => use wireshark as non-root
-  capabilities: path=/usr/sbin/dumpcap capability='CAP_NET_RAW+eip'
+  capabilities: path="{{ dumpcap_path }}" capability='CAP_NET_RAW+eip'
 
 - name: change dumpcap capabilities CAP_NET_ADMIN+eip => use wireshark as non-root
-  capabilities: path=/usr/sbin/dumpcap capability='CAP_NET_ADMIN+eip'
+  capabilities: path="{{ dumpcap_path }}" capability='CAP_NET_ADMIN+eip'
