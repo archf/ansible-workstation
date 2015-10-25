@@ -2,8 +2,8 @@
 # packager: yum or dnf
 packages:
   - python3-ipython
-  - python3-ipdb
   - python3-devel
+  - python3-ipdb
   - python-pip
   - inotify-tools-devel
   - urlview
@@ -21,16 +21,19 @@ packages:
   - vagrant
   - gsmartcontrol
   - pgadmin3
-  - libvirt-daemon-vbox
-  - dkms
   - gcc
-  - wireshark
-  - wireshark-gnome
   - vagrant
   - vagrant-lxc
+  - wireshark
+  - wireshark-gnome
+  - gitk
+  - libvirt-daemon-vbox
+  - dkms
   - lxc
   - lxc-extra
   - lxc-templates
+  - simple-mtpfs
+  - x2goserver
   # for virtualbox
   # - RemoteBox
   # - kernel-headers

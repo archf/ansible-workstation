@@ -27,5 +27,10 @@ packages:
   - wireshark
   - gitk
   - entr
+  - mtpfs
+  - debootstrap
+  - lxc
+  - lxc-templates
+  - python3-lxc
 
 dumpcap_path: /usr/bin/dumpcap
