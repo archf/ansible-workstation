@@ -24,6 +24,7 @@ packages:
   - gcc
   - vagrant
   - vagrant-lxc
+  - vagrant-libvirt
   - wireshark
   - wireshark-gnome
   - gitk
