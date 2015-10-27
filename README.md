@@ -1,7 +1,8 @@
 Ansible workstation Role
 =====================
 
-Ansible role to install default packages on a machine used for daily developpement. These are chosen for a desktop environnement.
+Ansible role to install default packages on a machine used for daily developpement. These are chosen for a desktop environnement.\
+On debian machines, required ppas are also installed.
 
 Requirements
 ------------

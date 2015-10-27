@@ -5,7 +5,12 @@
 - name: load OS specific variables (see ../vars/*)
   include_vars: "{{ ansible_os_family }}.yml"
 
-- name: install python3 packages
+- name: install required ppas on ubuntu machines
+  apt_repository: repo="{{ item }}"
+  with_items: apt_repos
+  when: ansible_distribution == "Ubuntu" and apt_repos is defined
+
+- name: install packages
   action: "{{ ansible_pkg_mgr }} pkg={{ item }} state=latest"
   with_items: packages
 
