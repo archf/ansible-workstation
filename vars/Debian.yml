@@ -32,5 +32,6 @@ packages:
   - lxc
   - lxc-templates
   - python3-lxc
+  - virtualbox-qt
 
 dumpcap_path: /usr/bin/dumpcap
