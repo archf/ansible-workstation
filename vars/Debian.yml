@@ -32,5 +32,7 @@ packages:
   - lxc
   - lxc-templates
   - python3-lxc
+  - fusefat
+  - bind9utils
 
 dumpcap_path: /usr/bin/dumpcap
