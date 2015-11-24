@@ -34,5 +34,7 @@ packages:
   - virtualbox-qt
   - redshift
   - gtk-redshift
+  - fusefat
+  - bind9utils
 
 dumpcap_path: /usr/bin/dumpcap
