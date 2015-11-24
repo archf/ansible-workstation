@@ -17,7 +17,6 @@ packages:
   - exuberant-ctags
   - httrack
   - keepassx
-  - redshift
   - remmina
   - vagrant
   - gsmartcontrol
@@ -33,5 +32,7 @@ packages:
   - lxc-templates
   - python3-lxc
   - virtualbox-qt
+  - redshift
+  - gtk-redshift
 
 dumpcap_path: /usr/bin/dumpcap
