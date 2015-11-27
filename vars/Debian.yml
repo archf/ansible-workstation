@@ -18,6 +18,7 @@ packages:
   - httrack
   - keepassx
   - remmina
+  - remmina-plugin-rdp
   - vagrant
   - gsmartcontrol
   - pgadmin3
