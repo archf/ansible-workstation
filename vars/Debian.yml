@@ -1,6 +1,5 @@
 ---
-# packager: apt
-packages:
+workstation_pkgs:
   - ipython3
   - python-dev
   - python-ipdb

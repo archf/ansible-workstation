@@ -11,8 +11,7 @@
   when: ansible_distribution == "Ubuntu" and apt_repos is defined
 
 - name: install packages
-  action: "{{ ansible_pkg_mgr }} pkg={{ item }} state=latest"
-  with_items: packages
+  package: name={{ workstation_pkgs }} state={{ workstation_pkg_state }}
 
 - name: install entr (a filesystem watcher)
   script: install_entr.sh

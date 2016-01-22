@@ -1,6 +1,5 @@
 ---
-# packager: yum or dnf
-packages:
+workstation_pkgs:
   - python3-ipython
   - python3-devel
   - python3-ipdb
