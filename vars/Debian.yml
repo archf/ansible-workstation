@@ -37,5 +37,6 @@ packages:
   - gtk-redshift
   - fusefat
   - bind9utils
+  - ipcalc
 
 dumpcap_path: /usr/bin/dumpcap
