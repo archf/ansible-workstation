@@ -13,13 +13,9 @@
 - name: install packages
   package: name={{ workstation_pkgs }} state={{ workstation_pkg_state }}
 
-- name: install entr (a filesystem watcher)
+- name: install entr (fs watcher) on rhel by script
   script: install_entr.sh
   when: ansible_os_family != 'Debian'
-
-## created by default when installing package
-# - name: create a wireshark group
-#   group: name=wireshark state=present
 
 - name: change dumpcap capabilities CAP_NET_RAW+eip => use wireshark as non-root
   capabilities: path="{{ dumpcap_path }}" capability='CAP_NET_RAW+eip'
