@@ -2,9 +2,8 @@
 workstation_pkgs:
   - ipython3
   - python-dev
-  - python-ipdb
   - python3-ipdb
-  - python-pip
+  - python3-pip
   - libinotifytools-dev
   - urlview
   - workrave
@@ -28,14 +27,21 @@ workstation_pkgs:
   - entr
   - mtpfs
   - debootstrap
-  - lxc
-  - lxc-templates
-  - python3-lxc
   - virtualbox-qt
   - redshift
   - gtk-redshift
   - fusefat
   - bind9utils
   - ipcalc
+  - xdotool
+  - parcellite
+  - i3
+  - j4-dmenu-desktop
+  - pavucontrol
+  - pasystray
+  # - lxc
+  # - lxd
+  # - lxc-templates
+  # - python3-lxc
 
 dumpcap_path: /usr/bin/dumpcap
