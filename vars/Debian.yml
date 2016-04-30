@@ -38,6 +38,7 @@ workstation_pkgs:
   - i3
   - j4-dmenu-desktop
   - pavucontrol
+  - pdfshuffler
   - pasystray
   # - lxc
   # - lxd
