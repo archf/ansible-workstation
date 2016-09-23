@@ -1,9 +1,9 @@
 ---
 galaxy_info:
   author: Felix Archambault
-  description: Ansible role to install default packages on a machine used for daily developpement.
+  description: A role to install default packages on a machine used for daily developpement.
   license: MIT
-  min_ansible_version: 1.2
+  min_ansible_version: 2.0
   platforms:
     - name: EL
       versions:
@@ -18,6 +18,8 @@ galaxy_info:
     - name: Debian
       versions:
       - wheezy
-  categories:
-  - development
+  galaxy_tags:
+    - development
+    - system
+
 dependencies: []

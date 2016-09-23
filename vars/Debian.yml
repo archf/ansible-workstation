@@ -5,44 +5,40 @@ workstation_pkgs:
   - python3-ipdb
   - python3-pip
   - libinotifytools-dev
-  - urlview
   - workrave
-  - pidgin
   - silversearcher-ag
-  - keychain
   - xsel
   - pandoc
   - exuberant-ctags
   - httrack
-  - keepassx
   - remmina
   - remmina-plugin-rdp
   - vagrant
   - gsmartcontrol
   - pgadmin3
   - gcc
-  - vagrant
   - wireshark
   - gitk
   - entr
   - mtpfs
   - debootstrap
-  - virtualbox-qt
-  - redshift
-  - gtk-redshift
+  - redshift-gtk
   - fusefat
   - bind9utils
   - ipcalc
   - xdotool
-  - parcellite
-  - i3
-  - j4-dmenu-desktop
-  - pavucontrol
+  - xbindkey
   - pdfshuffler
-  - pasystray
+  - lxd
   # - lxc
-  # - lxd
   # - lxc-templates
   # - python3-lxc
+  # - virtualbox-qt
+  # - urlview
+  # - parcellite
+  # - i3
+  # - j4-dmenu-desktop
+  # - pavucontrol
+  # - pasystray
 
 dumpcap_path: /usr/bin/dumpcap

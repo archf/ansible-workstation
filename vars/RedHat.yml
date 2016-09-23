@@ -5,11 +5,8 @@ workstation_pkgs:
   - python3-ipdb
   - python-pip
   - inotify-tools-devel
-  - urlview
   - workrave
-  - pidgin
   - the_silver_searcher
-  - keychain
   - xsel
   - pandoc
   - ctags
@@ -22,18 +19,17 @@ workstation_pkgs:
   - pgadmin3
   - gcc
   - vagrant
-  - vagrant-lxc
-  - vagrant-libvirt
   - wireshark
   - wireshark-gnome
   - gitk
   - libvirt-daemon-vbox
   - dkms
-  - lxc
-  - lxc-extra
-  - lxc-templates
   - simple-mtpfs
-  - x2goserver
+  # - lxc
+  # - lxc-extra
+  # - lxc-templates
+  # - x2goserver
+  # - urlview
   # for virtualbox
   # - RemoteBox
   # - kernel-headers
