@@ -51,7 +51,7 @@ workstation_pkgs:
   - bind9utils
   - ipcalc
   - xdotool
-  - xbindkey
+  - xbindkeys
   - pdfshuffler
   - lxd
   # - lxc
