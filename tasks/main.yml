@@ -10,8 +10,17 @@
   with_items: "{{apt_repos}}"
   when: ansible_distribution == "Ubuntu" and apt_repos is defined
 
-- name: install packages
+- name: install os packages
   package: name={{ workstation_pkgs }} state={{ workstation_pkg_state }}
+
+- name: install pip packages
+  command: "{{ '/usr/bin/pip3' if ansible_os_family == 'Debian' else '/usr/bin/pip' }} -q install {{workstation_pip_pkgs|join(' ')}}"
+  become: yes
+  register: pip_cmd_result
+  changed_when: pip_cmd_result.rc == 0 and pip_cmd_result.stdout_lines == ""
+
+- debug: var=pip_cmd_result.stdout_lines
+  when: pip_cmd_result.stdout_lines
 
 - name: install entr (fs watcher) on rhel by script
   script: install_entr.sh
