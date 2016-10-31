@@ -30,6 +30,11 @@ workstation_pkgs:
   - xbindkeys
   - pdfshuffler
   - lxd
+  - network-manager-openconnect
+  - network-manager-vpnc
+  - network-manager-openvpn
+  - network-manager-ssh
+  - stoken
   # - lxc
   # - lxc-templates
   # - python3-lxc
