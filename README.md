@@ -20,55 +20,6 @@ On debian machines, required ppas are also installed.
 Those variables from `vars/*.{yml,json}` are loaded dynamically during task
 runtime using the `include_vars` module.
 
-Variables loaded from `vars/Debian.yml`.
-
-```yaml
-workstation_pkgs:
-  - ipython3
-  - python-dev
-  - python3-ipdb
-  - python3-pip
-  - libinotifytools-dev
-  - workrave
-  - silversearcher-ag
-  - xsel
-  - pandoc
-  - exuberant-ctags
-  - httrack
-  - remmina
-  - remmina-plugin-rdp
-  - vagrant
-  - gsmartcontrol
-  - pgadmin3
-  - gcc
-  - wireshark
-  - gitk
-  - entr
-  - mtpfs
-  - debootstrap
-  - redshift-gtk
-  - fusefat
-  - bind9utils
-  - ipcalc
-  - xdotool
-  - xbindkeys
-  - pdfshuffler
-  - lxd
-  # - lxc
-  # - lxc-templates
-  # - python3-lxc
-  # - virtualbox-qt
-  # - urlview
-  # - parcellite
-  # - i3
-  # - j4-dmenu-desktop
-  # - pavucontrol
-  # - pasystray
-
-dumpcap_path: /usr/bin/dumpcap
-
-```
-
 Variables loaded from `vars/RedHat.yml`.
 
 ```yaml
@@ -112,12 +63,92 @@ dumpcap_path: /usr/sbin/dumpcap
 
 ```
 
+Variables loaded from `vars/Debian.yml`.
+
+```yaml
+workstation_pkgs:
+  - ipython3
+  - python-dev
+  - python3-ipdb
+  - python3-pip
+  - libinotifytools-dev
+  - workrave
+  - silversearcher-ag
+  - xsel
+  - pandoc
+  - exuberant-ctags
+  - httrack
+  - remmina
+  - remmina-plugin-rdp
+  - vagrant
+  - gsmartcontrol
+  - pgadmin3
+  - gcc
+  - wireshark
+  - gitk
+  - entr
+  - mtpfs
+  - debootstrap
+  - redshift-gtk
+  - fusefat
+  - bind9utils
+  - ipcalc
+  - xdotool
+  - xbindkeys
+  - pdfshuffler
+  - lxd
+  - network-manager-openconnect
+  - network-manager-vpnc
+  - network-manager-openvpn
+  - network-manager-ssh
+  - stoken
+  # - lxc
+  # - lxc-templates
+  # - python3-lxc
+  # - virtualbox-qt
+  # - urlview
+  # - parcellite
+  # - i3
+  # - j4-dmenu-desktop
+  # - pavucontrol
+  # - pasystray
+
+dumpcap_path: /usr/bin/dumpcap
+
+```
+
 ### Default vars
 
 Defaults from `defaults/main.yml`.
 
 ```yaml
 workstation_pkg_state: latest
+
+workstation_pip_pkgs:
+  - sphinx-autobuild
+  - recommonmark
+  - sphinxcontrib-libreoffice
+  - sphinxcontrib-exceltable
+  - sphinx_rtd_theme
+  - tabulate
+  - netaddr
+  - passlib
+  - yaml2rst
+  - m2r
+  - jinja2
+  - pyyaml
+  - pytest
+  - hypothesis
+  - twine
+  - flake8
+  - flake8-docstrings
+  - autopep8
+  - Sphinx
+  # - pip
+  # ldap
+  # imaging libraries
+  # - pil
+  # - pillow
 
 ```
 
