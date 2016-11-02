@@ -20,49 +20,6 @@ On debian machines, required ppas are also installed.
 Those variables from `vars/*.{yml,json}` are loaded dynamically during task
 runtime using the `include_vars` module.
 
-Variables loaded from `vars/RedHat.yml`.
-
-```yaml
-workstation_pkgs:
-  - python3-ipython
-  - python3-devel
-  - python3-ipdb
-  - python-pip
-  - inotify-tools-devel
-  - workrave
-  - the_silver_searcher
-  - xsel
-  - pandoc
-  - ctags
-  - httrack
-  - keepassx
-  - redshift
-  - remmina
-  - vagrant
-  - gsmartcontrol
-  - pgadmin3
-  - gcc
-  - vagrant
-  - wireshark
-  - wireshark-gnome
-  - gitk
-  - libvirt-daemon-vbox
-  - dkms
-  - simple-mtpfs
-  # - lxc
-  # - lxc-extra
-  # - lxc-templates
-  # - x2goserver
-  # - urlview
-  # for virtualbox
-  # - RemoteBox
-  # - kernel-headers
-  # - kernel-devel
-
-dumpcap_path: /usr/sbin/dumpcap
-
-```
-
 Variables loaded from `vars/Debian.yml`.
 
 ```yaml
@@ -114,6 +71,49 @@ workstation_pkgs:
   # - pasystray
 
 dumpcap_path: /usr/bin/dumpcap
+
+```
+
+Variables loaded from `vars/RedHat.yml`.
+
+```yaml
+workstation_pkgs:
+  - python3-ipython
+  - python3-devel
+  - python3-ipdb
+  - python-pip
+  - inotify-tools-devel
+  - workrave
+  - the_silver_searcher
+  - xsel
+  - pandoc
+  - ctags
+  - httrack
+  - keepassx
+  - redshift
+  - remmina
+  - vagrant
+  - gsmartcontrol
+  - pgadmin3
+  - gcc
+  - vagrant
+  - wireshark
+  - wireshark-gnome
+  - gitk
+  - libvirt-daemon-vbox
+  - dkms
+  - simple-mtpfs
+  # - lxc
+  # - lxc-extra
+  # - lxc-templates
+  # - x2goserver
+  # - urlview
+  # for virtualbox
+  # - RemoteBox
+  # - kernel-headers
+  # - kernel-devel
+
+dumpcap_path: /usr/sbin/dumpcap
 
 ```
 
