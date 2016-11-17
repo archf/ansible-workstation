@@ -22,6 +22,12 @@ workstation_pip_pkgs:
   - flake8-docstrings
   - autopep8
   - Sphinx
+  - tqdm
+  - PyInstaller
+  - pytest-cov
+  - pytest-gitignore
+
+  # - coverage
   # - pip
   # ldap
   # imaging libraries

@@ -31,9 +31,11 @@ workstation_pkgs:
   - pdfshuffler
   - lxd
   - network-manager-openconnect
-  - network-manager-vpnc
-  - network-manager-openvpn
+  - network-manager-openconnect-gnome
+  - network-manager-vpnc-gnome
+  - network-manager-openvpn-gnome
   - network-manager-ssh
+  - network-manager-ssh-gnome
   - stoken
   # - lxc
   # - lxc-templates
