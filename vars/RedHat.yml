@@ -25,6 +25,9 @@ workstation_pkgs:
   - libvirt-daemon-vbox
   - dkms
   - simple-mtpfs
+  # to build tmux
+  - ncurses-devel
+  - libevent-devel
   # - lxc
   # - lxc-extra
   # - lxc-templates
