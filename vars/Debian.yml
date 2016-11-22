@@ -37,9 +37,11 @@ workstation_pkgs:
   - network-manager-ssh
   - network-manager-ssh-gnome
   - stoken
+  - python3-dev
   # to build tmux
   - libevent-dev
   - ncurses-dev
+
   # - lxc
   # - lxc-templates
   # - python3-lxc

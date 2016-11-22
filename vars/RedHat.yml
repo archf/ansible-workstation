@@ -25,6 +25,8 @@ workstation_pkgs:
   - libvirt-daemon-vbox
   - dkms
   - simple-mtpfs
+  - stoken
+  - python3-devel
   # to build tmux
   - ncurses-devel
   - libevent-devel
