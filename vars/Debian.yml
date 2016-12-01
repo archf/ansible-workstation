@@ -41,6 +41,8 @@ workstation_pkgs:
   # to build tmux
   - libevent-dev
   - ncurses-dev
+  - yum
+  - fortune
 
   # - lxc
   # - lxc-templates

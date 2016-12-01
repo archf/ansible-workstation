@@ -30,6 +30,7 @@ workstation_pkgs:
   # to build tmux
   - ncurses-devel
   - libevent-devel
+  - fortune
   # - lxc
   # - lxc-extra
   # - lxc-templates
