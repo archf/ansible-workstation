@@ -3,11 +3,12 @@
 workstation_pkg_state: latest
 
 workstation_pip_pkgs:
+  - Sphinx
   - sphinx-autobuild
-  - recommonmark
   - sphinxcontrib-libreoffice
   - sphinxcontrib-exceltable
   - sphinx_rtd_theme
+  - recommonmark
   - tabulate
   - netaddr
   - passlib
@@ -15,17 +16,20 @@ workstation_pip_pkgs:
   - m2r
   - jinja2
   - pyyaml
-  - pytest
-  - hypothesis
   - twine
   - flake8
   - flake8-docstrings
   - autopep8
-  - Sphinx
   - tqdm
   - PyInstaller
+  - hypothesis
+  - pytest
   - pytest-cov
   - pytest-gitignore
+  - ansible
+  - ansidoc
+  - httpie
+  - ssh-import-id
 
   # - coverage
   # - pip
@@ -33,3 +37,6 @@ workstation_pip_pkgs:
   # imaging libraries
   # - pil
   # - pillow
+  # other stuff
+  # - flake8-author
+  # - dnspython

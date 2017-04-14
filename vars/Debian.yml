@@ -4,6 +4,8 @@ workstation_pkgs:
   - python-dev
   - python3-ipdb
   - python3-pip
+  - python3-dev
+  - python3-psycopg2
   - libinotifytools-dev
   - workrave
   - silversearcher-ag
@@ -11,8 +13,6 @@ workstation_pkgs:
   - pandoc
   - exuberant-ctags
   - httrack
-  - remmina
-  - remmina-plugin-rdp
   - vagrant
   - gsmartcontrol
   - pgadmin3
@@ -21,6 +21,7 @@ workstation_pkgs:
   - gitk
   - entr
   - mtpfs
+  - jq
   - debootstrap
   - redshift-gtk
   - fusefat
@@ -30,6 +31,7 @@ workstation_pkgs:
   - xbindkeys
   - pdfshuffler
   - lxd
+  - openconnect
   - network-manager-openconnect
   - network-manager-openconnect-gnome
   - network-manager-vpnc-gnome
@@ -37,13 +39,18 @@ workstation_pkgs:
   - network-manager-ssh
   - network-manager-ssh-gnome
   - stoken
-  - python3-dev
   # to build tmux
   - libevent-dev
   - ncurses-dev
   - yum
   - fortune
+  # require x2go ppa
+  # - x2goserver
+  # - x2goserver-xsession
+  # - x2godesktopsharing
 
+  # - remmina
+  # - remmina-plugin-rdp
   # - lxc
   # - lxc-templates
   # - python3-lxc
@@ -54,5 +61,7 @@ workstation_pkgs:
   # - j4-dmenu-desktop
   # - pavucontrol
   # - pasystray
+  # - golang-go
+  # - golang-doc
 
 dumpcap_path: /usr/bin/dumpcap
