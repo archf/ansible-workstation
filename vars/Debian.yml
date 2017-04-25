@@ -7,7 +7,6 @@ workstation_pkgs:
   - python3-dev
   - python3-psycopg2
   - libinotifytools-dev
-  - workrave
   - silversearcher-ag
   - xsel
   - pandoc
@@ -43,12 +42,16 @@ workstation_pkgs:
   - libevent-dev
   - ncurses-dev
   - yum
+  # dbus viewer
   - fortune
-  # require x2go ppa
+  - d-feet
+  - i3
+  # requires x2go ppa
   # - x2goserver
   # - x2goserver-xsession
   # - x2godesktopsharing
 
+  # - workrave
   # - remmina
   # - remmina-plugin-rdp
   # - lxc
@@ -57,11 +60,28 @@ workstation_pkgs:
   # - virtualbox-qt
   # - urlview
   # - parcellite
-  # - i3
-  # - j4-dmenu-desktop
   # - pavucontrol
   # - pasystray
   # - golang-go
   # - golang-doc
+
+# List of ppa to install.
+apt_ppas:
+  - 'ppa:ubuntu-lxc/lxc-stable'
+  - 'ppa:ubuntu-lxc/lxd-stable'
+  - 'ppa:ansible/ansible'
+  - 'ppa:tmate.io/archive'
+  - 'ppa:mkusb/ppa'
+
+# List of Debian repos to install
+apt_repos:
+  - 'http://ppa.launchpad.net/vincent-c/ponysay/ubuntu xenial/main amd64 Packages'
+  - 'http://debian.sur5r.net/i3 xenial/universe amd64 Packages'
+  - 'https://repo.skype.com/deb stable/main amd64 Packages'
+  - 'https://packagecloud.io/slacktechnologies/slack/debian jessie/main amd64 Packages'
+  - 'https://apt.syncthing.net syncthing/release amd64 Packages'
+  - 'http://dl.google.com/linux/talkplugin/deb stable/main amd64 Packages'
+  - 'http://dl.google.com/linux/chrome/deb stable/main amd64 Packages'
+  # - 'ppa:x2go/stable'
 
 dumpcap_path: /usr/bin/dumpcap

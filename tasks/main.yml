@@ -7,8 +7,13 @@
 
 - name: install required ppas on ubuntu machines
   apt_repository: repo="{{ item }}"
+  with_items: "{{apt_ppas}}"
+  when: ansible_distribution == "Ubuntu"
+
+- name: install required repos on Debian derivatives
+  apt_repository: repo="{{ item }}"
   with_items: "{{apt_repos}}"
-  when: ansible_distribution == "Ubuntu" and apt_repos is defined
+  when: ansible_os_family == "Debian"
 
   # NetworkManager is sarting dnsmqaq with the '--no-hosts' options witch
   # prevents reading the OS '/etc/hosts' file.
