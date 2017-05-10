@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=MATE-XSESSION
+Name[ca]=MATE-XSESSION
+Name[en_US]=MATE-XSESSION
+Comment=This session logs you into MATE via local xsession
+Comment[en_US]=This session logs you into MATE
+Exec=/etc/X11/Xsession
+#TryExec=mate-session
+Icon=
+Type=Application
+DesktopNames=MATE
+Keywords=launch;MATE;desktop;session;
+# see https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html

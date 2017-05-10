@@ -23,6 +23,7 @@ workstation_pkgs:
   - jq
   - debootstrap
   - redshift-gtk
+  - dos2unix
   - fusefat
   - bind9utils
   - ipcalc
@@ -72,16 +73,20 @@ apt_ppas:
   - 'ppa:ansible/ansible'
   - 'ppa:tmate.io/archive'
   - 'ppa:mkusb/ppa'
+  - 'ppa:openconnect/daily'
+  # - 'ppa:ubuntu-wine/ppa'
 
 # List of Debian repos to install
 apt_repos:
-  - 'http://ppa.launchpad.net/vincent-c/ponysay/ubuntu xenial/main amd64 Packages'
-  - 'http://debian.sur5r.net/i3 xenial/universe amd64 Packages'
-  - 'https://repo.skype.com/deb stable/main amd64 Packages'
-  - 'https://packagecloud.io/slacktechnologies/slack/debian jessie/main amd64 Packages'
-  - 'https://apt.syncthing.net syncthing/release amd64 Packages'
-  - 'http://dl.google.com/linux/talkplugin/deb stable/main amd64 Packages'
-  - 'http://dl.google.com/linux/chrome/deb stable/main amd64 Packages'
+  - 'deb [arch=amd64] http://debian.sur5r.net/i3/ xenial universe'
+  - 'deb [arch=amd64] https://repo.skype.com/deb/ stable main'
+  - 'deb [arch=amd64] https://packagecloud.io/slacktechnologies/slack/debian/ jessie main'
+  - 'deb [arch=amd64] https://apt.syncthing.net/ syncthing release'
+  - 'deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main'
+  - 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+  # - 'deb [arch=amd64] http://ppa.launchpad.net/vincent-c/ponysay/ubuntu/ xenial main'
   # - 'ppa:x2go/stable'
+  # see https://www.postgresql.org/download/
+  # -'http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main'
 
 dumpcap_path: /usr/bin/dumpcap

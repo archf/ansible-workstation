@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=I3-XSESSION
+Name[ca]=I3-XSESSION
+Name[en_US]=I3-XSESSION
+Comment=This session logs you into I3 via local xsession
+Comment[en_US]=This session logs you into I3
+Exec=/etc/X11/Xsession
+#TryExec=mate-session
+Icon=
+Type=Application
+DesktopNames=I3
+Keywords=launch;I3;desktop;session;
+# see https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html

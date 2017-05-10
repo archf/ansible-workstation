@@ -5,28 +5,15 @@
 - name: load OS specific variables (see ../vars/*)
   include_vars: "{{ ansible_os_family }}.yml"
 
-- name: install required ppas on ubuntu machines
+- name: install ppas on ubuntu machines
   apt_repository: repo="{{ item }}"
   with_items: "{{apt_ppas}}"
   when: ansible_distribution == "Ubuntu"
 
-- name: install required repos on Debian derivatives
+- name: install repos on Debian derivatives
   apt_repository: repo="{{ item }}"
   with_items: "{{apt_repos}}"
   when: ansible_os_family == "Debian"
-
-  # NetworkManager is sarting dnsmqaq with the '--no-hosts' options witch
-  # prevents reading the OS '/etc/hosts' file.
-  # To take effect, NetworkManager service needs to be restarted
-- name: have networkmanager's dnsmqaq started reading '/etc/hosts'
-  lineinfile:
-    line: "addn-hosts=/etc/hosts"
-    dest: "/etc/NetworkManager/dnsmasq.d/hosts.conf"
-    owner: root
-    group: root
-    create: yes
-    state: present
-  when: ansible_distribution == "Ubuntu"
 
 - name: install os packages
   package: name={{ workstation_pkgs }} state={{ workstation_pkg_state }}
@@ -39,6 +26,21 @@
 
 - debug: var=pip_cmd_result.stdout_lines
   when: pip_cmd_result.stdout_lines
+
+- name: install lighdm menu entries
+  copy:
+    src: "{{item}}"
+    dest: /usr/share/xsessions/{{item}}
+  with_items:
+    - mate-xsession.desktop
+    - i3-xsession.desktop
+
+# moved to dotfiles
+# - name: install hexchat colorsheme
+#   unarchive:
+#     src: https://dl.hexchat.net/themes/Monokai.hct
+#     dest: ~/.config/hexchat
+#     remote_src: True
 
 - name: install entr (fs watcher) on rhel by script
   script: install_entr.sh
