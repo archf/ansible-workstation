@@ -74,6 +74,7 @@ apt_ppas:
   - 'ppa:tmate.io/archive'
   - 'ppa:mkusb/ppa'
   - 'ppa:openconnect/daily'
+  - 'ppa:neovim-ppa/stable'
   # - 'ppa:ubuntu-wine/ppa'
 
 # List of Debian repos to install
