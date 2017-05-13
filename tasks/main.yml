@@ -35,6 +35,15 @@
     - mate-xsession.desktop
     - i3-xsession.desktop
 
+# we want to start gpg-agent with a --user systemd unit file
+- name: disable Xession gpg-agent
+  lineinfile:
+    dest: /etc/X11/Xsession.options
+    regexp: ^\s*use-ssh-agent
+    line: "# use-ssh-agent"
+    backrefs: yes
+    state: present
+
 # moved to dotfiles
 # - name: install hexchat colorsheme
 #   unarchive:
