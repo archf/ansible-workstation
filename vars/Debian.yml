@@ -15,6 +15,7 @@ workstation_pkgs:
   - vagrant
   - gsmartcontrol
   - pgadmin3
+  - zeal
   - gcc
   - wireshark
   - gitk
@@ -25,10 +26,13 @@ workstation_pkgs:
   - redshift-gtk
   - dos2unix
   - fusefat
+  - pastebinit
   - bind9utils
   - ipcalc
   - xdotool
   - xbindkeys
+  # random identity generator
+  - rig
   - pdfshuffler
   - lxd
   - openconnect
@@ -39,6 +43,10 @@ workstation_pkgs:
   - network-manager-ssh
   - network-manager-ssh-gnome
   - stoken
+  # shadowsocks
+  - shadowsocks-qt5
+  # alternate C implementation
+  # - shadowsocks-libev
   # to build tmux
   - libevent-dev
   - ncurses-dev
@@ -47,21 +55,31 @@ workstation_pkgs:
   - fortune
   - d-feet
   - i3
+  - pinentry
+  - scdaemon
+  - pcscd
+  - yubikey-personalization-gui
+  - python3-yubikey-manager
+  # older versions requires
+  - postgresql-client-9.5
+  # this requires to add the postgresql repo to access earlier versions
+  - postgresql-client-9.4
+  # - yubioath-desktop
   # requires x2go ppa
   # - x2goserver
   # - x2goserver-xsession
   # - x2godesktopsharing
 
+  - remmina
+  - remmina-plugin-rdp
+  - pavucontrol
   # - workrave
-  # - remmina
-  # - remmina-plugin-rdp
   # - lxc
   # - lxc-templates
   # - python3-lxc
   # - virtualbox-qt
   # - urlview
   # - parcellite
-  # - pavucontrol
   # - pasystray
   # - golang-go
   # - golang-doc
@@ -73,8 +91,12 @@ apt_ppas:
   - 'ppa:ansible/ansible'
   - 'ppa:tmate.io/archive'
   - 'ppa:mkusb/ppa'
-  - 'ppa:openconnect/daily'
   - 'ppa:neovim-ppa/stable'
+  - 'ppa:yubico/stable'
+  - 'ppa:zeal-developers/ppa'
+  - 'ppa:hzwhuang/ss-qt5'
+  - 'deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main'
+  # - 'ppa:openconnect/daily'
   # - 'ppa:ubuntu-wine/ppa'
 
 # List of Debian repos to install
@@ -85,6 +107,7 @@ apt_repos:
   - 'deb [arch=amd64] https://apt.syncthing.net/ syncthing release'
   - 'deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main'
   - 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+
   # - 'deb [arch=amd64] http://ppa.launchpad.net/vincent-c/ponysay/ubuntu/ xenial main'
   # - 'ppa:x2go/stable'
   # see https://www.postgresql.org/download/

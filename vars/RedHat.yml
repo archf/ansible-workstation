@@ -25,6 +25,8 @@ workstation_pkgs:
   - libvirt-daemon-vbox
   - dkms
   - simple-mtpfs
+  # random identity generator
+  - rig
   - stoken
   - python3-devel
   # to build tmux
