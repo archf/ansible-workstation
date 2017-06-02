@@ -3,26 +3,26 @@
 
 # specify the packages and the packager to use
 - name: load OS specific variables (see ../vars/*)
-  include_vars: "{{ ansible_os_family }}.yml"
+  include_vars: "{{ansible_os_family}}.yml"
 
 - name: install ppas and repos on ubuntu distributions
-  apt_repository: repo="{{ item }}"
+  apt_repository: repo="{{item}}"
   with_items: "{{apt_ppas}}"
   when: ansible_distribution == "Ubuntu"
 
 - name: install repos on Debian derivatives
-  apt_repository: repo="{{ item }}"
+  apt_repository: repo="{{item}}"
   with_items: "{{apt_repos}}"
   when: ansible_os_family == "Debian"
 
 - name: install os packages
-  package: name={{ workstation_pkgs }} state={{ workstation_pkg_state }}
+  package: name={{workstation_pkgs}} state={{workstation_pkg_state}}
 
 - name: install pip packages
-  command: "{{ '/usr/bin/pip3' if ansible_os_family == 'Debian' else '/usr/bin/pip' }} -q install {{workstation_pip_pkgs|join(' ')}}"
+  command: "{{'/usr/bin/pip3' if ansible_os_family == 'Debian' else '/usr/bin/pip'}} -q install {{workstation_pip_pkgs|join(' ')}}"
   become: yes
   register: pip_cmd_result
-  changed_when: pip_cmd_result.rc == 0 and pip_cmd_result.stdout_lines == ""
+  changed_when: pip_cmd_result['rc'] == 0 and pip_cmd_result['stdout_lines'] == ""
 
 - debug: var=pip_cmd_result.stdout_lines
   when: pip_cmd_result.stdout_lines
@@ -36,7 +36,7 @@
     - i3-xsession.desktop
 
 # we want to start gpg-agent with a --user systemd unit file
-- name: disable Xession gpg-agent
+- name: disable Xession gpg-agent startup script
   lineinfile:
     dest: /etc/X11/Xsession.options
     regexp: ^\s*use-ssh-agent
@@ -44,19 +44,19 @@
     backrefs: yes
     state: present
 
-# moved to dotfiles
-# - name: install hexchat colorsheme
-#   unarchive:
-#     src: https://dl.hexchat.net/themes/Monokai.hct
-#     dest: ~/.config/hexchat
-#     remote_src: True
+# also in dotfiles makefile.
+- name: install hexchat colorsheme
+  unarchive:
+    src: https://dl.hexchat.net/themes/Monokai.hct
+    dest: ~/.config/hexchat
+    remote_src: True
 
 - name: install entr (fs watcher) on rhel by script
   script: install_entr.sh
   when: ansible_os_family != 'Debian'
 
 - name: change dumpcap capabilities CAP_NET_RAW+eip => use wireshark as non-root
-  capabilities: path="{{ dumpcap_path }}" capability='CAP_NET_RAW+eip'
+  capabilities: path="{{dumpcap_path}}" capability='CAP_NET_RAW+eip'
 
 - name: change dumpcap capabilities CAP_NET_ADMIN+eip => use wireshark as non-root
-  capabilities: path="{{ dumpcap_path }}" capability='CAP_NET_ADMIN+eip'
+  capabilities: path="{{dumpcap_path}}" capability='CAP_NET_ADMIN+eip'
