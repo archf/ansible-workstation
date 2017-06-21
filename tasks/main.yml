@@ -15,8 +15,23 @@
   with_items: "{{apt_repos}}"
   when: ansible_os_family == "Debian"
 
+- name: add postgresql apt key
+  apt_key:
+    url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+  when: ansible_os_family == "Debian"
+
+# we cannot use the package module because we have no access to the
+# update_cache option and this is required after we have installed a gpg key.
+- name: install os packages on Debian os family
+  apt:
+    name: "{{workstation_pkgs}}"
+    state: "{{workstation_pkg_state}}"
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
 - name: install os packages
   package: name={{workstation_pkgs}} state={{workstation_pkg_state}}
+  when: ansible_os_family != "Debian"
 
 - name: install pip packages
   command: "{{'/usr/bin/pip3' if ansible_os_family == 'Debian' else '/usr/bin/pip'}} -q install {{workstation_pip_pkgs|join(' ')}}"
@@ -44,12 +59,14 @@
     backrefs: yes
     state: present
 
-# also in dotfiles makefile.
-- name: install hexchat colorsheme
-  unarchive:
-    src: https://dl.hexchat.net/themes/Monokai.hct
-    dest: ~/.config/hexchat
-    remote_src: True
+# # also in dotfiles makefile.
+# # commented because not idempotent
+# - name: install hexchat colorsheme
+#   unarchive:
+#     src: https://dl.hexchat.net/themes/Monokai.hct
+#     dest: ~/.config/hexchat
+#     remote_src: True
+#   become: no
 
 - name: install entr (fs watcher) on rhel by script
   script: install_entr.sh

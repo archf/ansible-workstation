@@ -57,7 +57,8 @@ workstation_pkgs:
   - fortune
   - d-feet
   - i3
-  - pinentry
+  - pinentry-gnome3
+  # - pinentry-gtk2
   - scdaemon
   - pcscd
   - yubikey-personalization-gui
