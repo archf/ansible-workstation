@@ -33,6 +33,8 @@ workstation_pkgs:
   - xbindkeys
   # random identity generator
   - rig
+  # ASCII banners out of ordinary text (see lolcat for colors)
+  - figlet
   - pdfshuffler
   - lxd
   - openconnect
