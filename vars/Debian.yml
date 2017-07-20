@@ -22,6 +22,8 @@ workstation_pkgs:
   - entr
   - mtpfs
   - jq
+  - pv
+  - progress
   - debootstrap
   - redshift-gtk
   - dos2unix
