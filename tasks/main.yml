@@ -15,9 +15,15 @@
   with_items: "{{apt_repos}}"
   when: ansible_os_family == "Debian"
 
-- name: add postgresql apt key
+- name: add postgresql gpg key
   apt_key:
     url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+  when: ansible_os_family == "Debian"
+
+- name: add i3wm gpg key
+  apt_key:
+    file: "{{role_path}}/files/sur5r-keyring-2015.gpg"
+    id: 'E3CA1A89941C42E6'
   when: ansible_os_family == "Debian"
 
 # we cannot use the package module because we have no access to the
