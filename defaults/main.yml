@@ -30,6 +30,7 @@ workstation_pip_pkgs:
   - ansidoc
   - httpie
   - ssh-import-id
+  - i3ipc
 
   # - coverage
   # - pip
