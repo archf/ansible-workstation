@@ -48,7 +48,7 @@
 - debug: var=pip_cmd_result.stdout_lines
   when: pip_cmd_result.stdout_lines
 
-- name: install lighdm menu entries
+- name: install lightDM menu entries
   copy:
     src: "{{item}}"
     dest: /usr/share/xsessions/{{item}}

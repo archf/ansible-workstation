@@ -47,10 +47,12 @@ workstation_pkgs:
   - network-manager-ssh
   - network-manager-ssh-gnome
   - stoken
-  # shadowsocks
+  # Python implementation
+  # - shadowsocks
+  # client gui
   - shadowsocks-qt5
-  # alternate C implementation
-  # - shadowsocks-libev
+  # Pure C implementation
+  - shadowsocks-libev
   # to build tmux
   - libevent-dev
   - ncurses-dev
@@ -59,6 +61,7 @@ workstation_pkgs:
   - fortune
   - d-feet
   - i3
+  - j4-dmenu-desktop
   - pinentry-gnome3
   # - pinentry-gtk2
   - scdaemon
@@ -99,7 +102,10 @@ apt_ppas:
   - 'ppa:neovim-ppa/stable'
   - 'ppa:yubico/stable'
   - 'ppa:zeal-developers/ppa'
+    # shadowsocks-qt5
   - 'ppa:hzwhuang/ss-qt5'
+    # pure C flavor
+  - 'ppa:max-c-lv/shadowsocks-libev'
   - 'deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main'
   # - 'ppa:openconnect/daily'
   # - 'ppa:ubuntu-wine/ppa'
