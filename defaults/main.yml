@@ -5,7 +5,7 @@ workstation_pkg_state: latest
 workstation_pip_pkgs:
   - Sphinx
   - sphinx-autobuild
-  - sphinxcontrib-libreoffice
+  # - sphinxcontrib-libreoffice
   - sphinxcontrib-exceltable
   - sphinx_rtd_theme
   - recommonmark
