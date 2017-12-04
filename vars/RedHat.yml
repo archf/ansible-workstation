@@ -1,4 +1,6 @@
 ---
+
+# List of packages to install on RedHat derivatives.
 workstation_pkgs:
   - python3-ipython
   - python3-devel
@@ -43,4 +45,5 @@ workstation_pkgs:
   # - kernel-headers
   # - kernel-devel
 
+# To set capabilities correctly for wireshark to work as unpriviledged user.
 dumpcap_path: /usr/sbin/dumpcap

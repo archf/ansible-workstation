@@ -1,4 +1,6 @@
 ---
+
+# List of packages to install on Debian derivatives.
 workstation_pkgs:
   - ipython3
   - python-dev
@@ -6,6 +8,7 @@ workstation_pkgs:
   - python3-pip
   - python3-dev
   - python3-psycopg2
+  - ansible
   - libinotifytools-dev
   - silversearcher-ag
   - xsel
@@ -33,6 +36,9 @@ workstation_pkgs:
   - ipcalc
   - xdotool
   - xbindkeys
+  - dconf-editor
+  - pass
+  - qtpass
   # random identity generator
   - rig
   # ASCII banners out of ordinary text (see lolcat for colors)
@@ -47,6 +53,7 @@ workstation_pkgs:
   - network-manager-ssh
   - network-manager-ssh-gnome
   - stoken
+  - connect-proxy
   # Python implementation
   # - shadowsocks
   # client gui
@@ -60,8 +67,6 @@ workstation_pkgs:
   # dbus viewer
   - fortune
   - d-feet
-  - i3
-  - j4-dmenu-desktop
   - pinentry-gnome3
   # - pinentry-gtk2
   - scdaemon
@@ -77,10 +82,11 @@ workstation_pkgs:
   # - x2goserver
   # - x2goserver-xsession
   # - x2godesktopsharing
-
   - remmina
   - remmina-plugin-rdp
-  - pavucontrol
+  # - pavucontrol
+  # hub (github from the cli)
+  - hub
   # - workrave
   # - lxc
   # - lxc-templates
@@ -94,34 +100,39 @@ workstation_pkgs:
 
 # List of ppa to install.
 apt_ppas:
-  - 'ppa:ubuntu-lxc/lxc-stable'
-  - 'ppa:ubuntu-lxc/lxd-stable'
+  - 'deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main'
   - 'ppa:ansible/ansible'
-  - 'ppa:tmate.io/archive'
-  - 'ppa:mkusb/ppa'
-  - 'ppa:neovim-ppa/stable'
-  - 'ppa:yubico/stable'
-  - 'ppa:zeal-developers/ppa'
-    # shadowsocks-qt5
-  - 'ppa:hzwhuang/ss-qt5'
-    # pure C flavor
-  - 'ppa:max-c-lv/shadowsocks-libev'
-  - 'deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main'
+  # while waiting for offical hub ppa, see
+  # https://github.com/github/hub/issues/718
+  - 'ppa:cpick/hub'
+  # - 'ppa:tmate.io/archive'
+  # - 'ppa:mkusb/ppa'
+  # - 'ppa:neovim-ppa/stable'
+  # - 'ppa:yubico/stable'
+  # - 'ppa:zeal-developers/ppa'
+
+   # shadowsocks-qt5
+  # - 'ppa:hzwhuang/ss-qt5'
+    # pure C flavor (lts only)
+  # - 'ppa:max-c-lv/shadowsocks-libev'
   # - 'ppa:openconnect/daily'
   # - 'ppa:ubuntu-wine/ppa'
 
-# List of Debian repos to install
-apt_repos:
-  - 'deb [arch=amd64] http://debian.sur5r.net/i3/ xenial universe'
-  - 'deb [arch=amd64] https://repo.skype.com/deb/ stable main'
-  - 'deb [arch=amd64] https://packagecloud.io/slacktechnologies/slack/debian/ jessie main'
-  - 'deb [arch=amd64] https://apt.syncthing.net/ syncthing release'
-  - 'deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main'
-  - 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+# List of Debian repos to install.
+apt_repos: []
+  # - 'deb [arch=amd64] https://repo.skype.com/deb/ stable main'
+  # - 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+  # - 'deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main'
+  # - 'deb [arch=amd64] https://packagecloud.io/slacktechnologies/slack/debian/ jessie main'
+  # - 'deb [arch=amd64] http://debian.sur5r.net/i3/ xenial universe'
 
+  # todo: task to install key
+  # - 'deb [arch=amd64] https://apt.syncthing.net/ syncthing release'
+  #
   # - 'deb [arch=amd64] http://ppa.launchpad.net/vincent-c/ponysay/ubuntu/ xenial main'
   # - 'ppa:x2go/stable'
   # see https://www.postgresql.org/download/
   # -'http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main'
 
+# To set capabilities correctly for wireshark to work as unpriviledged user.
 dumpcap_path: /usr/bin/dumpcap

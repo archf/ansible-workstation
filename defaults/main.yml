@@ -1,7 +1,9 @@
 ---
 
+# Package default state.
 workstation_pkg_state: latest
 
+# List of pip packages to install.
 workstation_pip_pkgs:
   - Sphinx
   - sphinx-autobuild
@@ -30,7 +32,11 @@ workstation_pip_pkgs:
   - ansidoc
   - httpie
   - ssh-import-id
-  - i3ipc
+  - jira
+  - pylibmc
+  - chrome-pass==0.2.3
+  # This would require 'memcached' and 'libmemcached-dev' installed
+  # - dogpile.cache
 
   # - coverage
   # - pip
@@ -41,3 +47,6 @@ workstation_pip_pkgs:
   # other stuff
   # - flake8-author
   # - dnspython
+
+# Not installing i3wm by default now
+workstation_i3wm: False

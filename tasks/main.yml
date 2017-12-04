@@ -6,12 +6,16 @@
   include_vars: "{{ansible_os_family}}.yml"
 
 - name: install ppas and repos on ubuntu distributions
-  apt_repository: repo="{{item}}"
+  apt_repository:
+    repo: "{{item}}"
+    # state: absent
   with_items: "{{apt_ppas}}"
   when: ansible_distribution == "Ubuntu"
 
 - name: install repos on Debian derivatives
-  apt_repository: repo="{{item}}"
+  apt_repository:
+    repo: "{{item}}"
+    # state: absent
   with_items: "{{apt_repos}}"
   when: ansible_os_family == "Debian"
 
@@ -20,11 +24,8 @@
     url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
   when: ansible_os_family == "Debian"
 
-- name: add i3wm gpg key
-  apt_key:
-    file: "{{role_path}}/files/sur5r-keyring-2015.gpg"
-    id: 'E3CA1A89941C42E6'
-  when: ansible_os_family == "Debian"
+- import_tasks: i3wm.yml
+  when: workstation_i3wm
 
 # we cannot use the package module because we have no access to the
 # update_cache option and this is required after we have installed a gpg key.
@@ -48,22 +49,15 @@
 - debug: var=pip_cmd_result.stdout_lines
   when: pip_cmd_result.stdout_lines
 
-- name: install lightDM menu entries
-  copy:
-    src: "{{item}}"
-    dest: /usr/share/xsessions/{{item}}
-  with_items:
-    - mate-xsession.desktop
-    - i3-xsession.desktop
-
 # we want to start gpg-agent with a --user systemd unit file
-- name: disable Xession gpg-agent startup script
-  lineinfile:
-    dest: /etc/X11/Xsession.options
-    regexp: ^\s*use-ssh-agent
-    line: "# use-ssh-agent"
-    backrefs: yes
-    state: present
+
+# - name: disable Xession gpg-agent startup script
+#   lineinfile:
+#     dest: /etc/X11/Xsession.options
+#     regexp: ^\s*use-ssh-agent
+#     line: "# use-ssh-agent"
+#     backrefs: yes
+#     state: present
 
 # # also in dotfiles makefile.
 # # commented because not idempotent
