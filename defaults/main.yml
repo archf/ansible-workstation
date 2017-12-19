@@ -33,9 +33,9 @@ workstation_pip_pkgs:
   - httpie
   - ssh-import-id
   - jira
-  - pylibmc
   - chrome-pass==0.2.3
-  # This would require 'memcached' and 'libmemcached-dev' installed
+  # This would require 'libz-dev', 'memcached' and 'libmemcached-dev' installed
+  - pylibmc
   # - dogpile.cache
 
   # - coverage

@@ -87,6 +87,10 @@ workstation_pkgs:
   # - pavucontrol
   # hub (github from the cli)
   - hub
+  # openstack caching
+  - memcached
+  - libmemcached-dev
+  - libz-dev
   # - workrave
   # - lxc
   # - lxc-templates

@@ -40,7 +40,7 @@
   package: name={{workstation_pkgs}} state={{workstation_pkg_state}}
   when: ansible_os_family != "Debian"
 
-- name: install pip packages
+- name: install OS pip packages
   command: "{{'/usr/bin/pip3' if ansible_os_family == 'Debian' else '/usr/bin/pip'}} -q install {{workstation_pip_pkgs|join(' ')}}"
   become: yes
   register: pip_cmd_result
@@ -48,16 +48,6 @@
 
 - debug: var=pip_cmd_result.stdout_lines
   when: pip_cmd_result.stdout_lines
-
-# we want to start gpg-agent with a --user systemd unit file
-
-# - name: disable Xession gpg-agent startup script
-#   lineinfile:
-#     dest: /etc/X11/Xsession.options
-#     regexp: ^\s*use-ssh-agent
-#     line: "# use-ssh-agent"
-#     backrefs: yes
-#     state: present
 
 # # also in dotfiles makefile.
 # # commented because not idempotent

@@ -26,7 +26,7 @@
 
 - name: install i3ipc pip package
   pip:
-    name:i3ipc
+    name: i3ipc
   become: yes
 
 - name: install lightDM menu entries
@@ -36,3 +36,13 @@
   with_items:
     - mate-xsession.desktop
     - i3-xsession.desktop
+
+# - name: disable Xession ssh-agent startup script
+# #   lineinfile:
+# #     dest: /etc/X11/Xsession.options
+# #     regexp: ^\s*use-ssh-agent
+# #     line: "# use-ssh-agent"
+# #     backrefs: yes
+# #     state: present
+#
+#
