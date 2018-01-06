@@ -39,6 +39,7 @@ workstation_pkgs:
   - dconf-editor
   - pass
   - qtpass
+  - cmake
   # random identity generator
   - rig
   # ASCII banners out of ordinary text (see lolcat for colors)
@@ -54,12 +55,6 @@ workstation_pkgs:
   - network-manager-ssh-gnome
   - stoken
   - connect-proxy
-  # Python implementation
-  # - shadowsocks
-  # client gui
-  - shadowsocks-qt5
-  # Pure C implementation
-  - shadowsocks-libev
   # to build tmux
   - libevent-dev
   - ncurses-dev
@@ -69,14 +64,13 @@ workstation_pkgs:
   - d-feet
   - pinentry-gnome3
   # - pinentry-gtk2
+  # openstack caching
+  - memcached
+  - libmemcached-dev
+  - libz-dev
   - scdaemon
   - pcscd
   - yubikey-personalization-gui
-  - python3-yubikey-manager
-  # older versions requires
-  - postgresql-client-9.5
-  # this requires to add the postgresql repo to access earlier versions
-  - postgresql-client-9.4
   # - yubioath-desktop
   # requires x2go ppa
   # - x2goserver
@@ -85,12 +79,20 @@ workstation_pkgs:
   - remmina
   - remmina-plugin-rdp
   # - pavucontrol
+  # Python implementation
+  # - shadowsocks
+  # client gui
+  # # requires ppa
+  # - shadowsocks-qt5
+  # Pure C implementation
+  - shadowsocks-libev
   # hub (github from the cli)
   - hub
-  # openstack caching
-  - memcached
-  - libmemcached-dev
-  - libz-dev
+  # - python3-yubikey-manager
+  # older versions requires
+  # - postgresql-client-9.5
+  # this requires to add the postgresql repo to access earlier versions
+  # - postgresql-client-9.4
   # - workrave
   # - lxc
   # - lxc-templates
@@ -104,7 +106,7 @@ workstation_pkgs:
 
 # List of ppa to install.
 apt_ppas:
-  - 'deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main'
+  # - 'deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main'
   - 'ppa:ansible/ansible'
   # while waiting for offical hub ppa, see
   # https://github.com/github/hub/issues/718

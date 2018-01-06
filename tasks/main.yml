@@ -46,8 +46,8 @@
   register: pip_cmd_result
   changed_when: pip_cmd_result['rc'] == 0 and pip_cmd_result['stdout_lines'] == ""
 
-- debug: var=pip_cmd_result.stdout_lines
-  when: pip_cmd_result.stdout_lines
+# - debug: var=pip_cmd_result.stdout_lines
+#   when: pip_cmd_result.stdout_lines
 
 # # also in dotfiles makefile.
 # # commented because not idempotent
