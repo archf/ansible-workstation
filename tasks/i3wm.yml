@@ -7,10 +7,10 @@
     name: "{{item}}"
     state: "present"
     update_cache: yes
-  with_items:
+  loop:
     - i3
     - j4-dmenu-desktop
-  when: ansible_os_family == "Debian"
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: copy i3m gpg key to remote machine
   copy:
@@ -22,7 +22,7 @@
   apt_key:
     file: /etc/apt/sur5r-keyring-2015.gpg
     id: 'E3CA1A89941C42E6'
-  when: ansible_os_family == "Debian"
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: install i3ipc pip package
   pip:
@@ -33,7 +33,7 @@
   copy:
     src: "{{item}}"
     dest: /usr/share/xsessions/{{item}}
-  with_items:
+  loop:
     - mate-xsession.desktop
     - i3-xsession.desktop
 

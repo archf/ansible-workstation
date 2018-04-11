@@ -3,26 +3,26 @@
 
 # specify the packages and the packager to use
 - name: load OS specific variables (see ../vars/*)
-  include_vars: "{{ansible_os_family}}.yml"
+  include_vars: "{{ansible_facts['os_family']}}.yml"
 
 - name: install ppas and repos on ubuntu distributions
   apt_repository:
     repo: "{{item}}"
     # state: absent
-  with_items: "{{apt_ppas}}"
-  when: ansible_distribution == "Ubuntu"
+  loop: "{{apt_ppas}}"
+  when: ansible_facts['distribution'] == "Ubuntu"
 
 - name: install repos on Debian derivatives
   apt_repository:
     repo: "{{item}}"
     # state: absent
-  with_items: "{{apt_repos}}"
-  when: ansible_os_family == "Debian"
+  loop: "{{apt_repos}}"
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: add postgresql gpg key
   apt_key:
     url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
-  when: ansible_os_family == "Debian"
+  when: ansible_facts['os_family'] == "Debian"
 
 - import_tasks: i3wm.yml
   when: workstation_i3wm
@@ -34,14 +34,14 @@
     name: "{{workstation_pkgs}}"
     state: "{{workstation_pkg_state}}"
     update_cache: yes
-  when: ansible_os_family == "Debian"
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: install os packages
   package: name={{workstation_pkgs}} state={{workstation_pkg_state}}
-  when: ansible_os_family != "Debian"
+  when: ansible_facts['os_family'] != "Debian"
 
 - name: install OS pip packages
-  command: "{{'/usr/bin/pip3' if ansible_os_family == 'Debian' else '/usr/bin/pip'}} -q install {{workstation_pip_pkgs|join(' ')}}"
+  command: "{{'/usr/bin/pip3' if ansible_facts['os_family'] == 'Debian' else '/usr/bin/pip'}} -q install {{workstation_pip_pkgs|join(' ')}}"
   become: yes
   register: pip_cmd_result
   changed_when: pip_cmd_result['rc'] == 0 and pip_cmd_result['stdout_lines'] == ""
@@ -60,7 +60,7 @@
 
 - name: install entr (fs watcher) on rhel by script
   script: install_entr.sh
-  when: ansible_os_family != 'Debian'
+  when: ansible_facts['os_family'] != 'Debian'
 
 - name: change dumpcap capabilities CAP_NET_RAW+eip => use wireshark as non-root
   capabilities: path="{{dumpcap_path}}" capability='CAP_NET_RAW+eip'
