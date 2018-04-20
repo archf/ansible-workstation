@@ -23,7 +23,7 @@ workstation_pkgs:
   - wireshark
   - gitk
   - entr
-  - mtpfs
+  - jmtpfs
   - jq
   - pv
   - progress
@@ -87,7 +87,7 @@ workstation_pkgs:
   # Pure C implementation
   - shadowsocks-libev
   # hub (github from the cli)
-  - hub
+  # - hub
   # - python3-yubikey-manager
   # older versions requires
   # - postgresql-client-9.5
@@ -105,12 +105,12 @@ workstation_pkgs:
   # - golang-doc
 
 # List of ppa to install.
-apt_ppas:
+apt_ppas: []
   # - 'deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ {{ansible_distribution_release}}-pgdg main'
-  - 'ppa:ansible/ansible'
+  # - 'ppa:ansible/ansible'
   # while waiting for offical hub ppa, see
   # https://github.com/github/hub/issues/718
-  - 'ppa:cpick/hub'
+  # - 'ppa:cpick/hub'
   # - 'ppa:tmate.io/archive'
   # - 'ppa:mkusb/ppa'
   # - 'ppa:neovim-ppa/stable'
