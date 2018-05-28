@@ -131,10 +131,6 @@ apt_repos: []
   # - 'deb [arch=amd64] http://dl.google.com/linux/talkplugin/deb/ stable main'
   # - 'deb [arch=amd64] https://packagecloud.io/slacktechnologies/slack/debian/ jessie main'
   # - 'deb [arch=amd64] http://debian.sur5r.net/i3/ xenial universe'
-
-  # todo: task to install key
-  # - 'deb [arch=amd64] https://apt.syncthing.net/ syncthing release'
-  #
   # - 'deb [arch=amd64] http://ppa.launchpad.net/vincent-c/ponysay/ubuntu/ xenial main'
   # - 'ppa:x2go/stable'
   # see https://www.postgresql.org/download/
