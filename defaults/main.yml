@@ -36,7 +36,6 @@ workstation_pip_pkgs:
   - matplotlib
   - jupyter
   - pandas
-  - chrome-pass==0.2.3
   # This would require 'libz-dev', 'memcached' and 'libmemcached-dev' installed
   - pylibmc
   # - dogpile.cache
