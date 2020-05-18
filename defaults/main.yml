@@ -37,8 +37,9 @@ workstation_pip_pkgs:
   - matplotlib
   - jupyter
   - pandas
-  # This would require 'libz-dev', 'memcached' and 'libmemcached-dev' installed
-  - pylibmc
+  # This would require 'libz-dev', 'memcached' and 'libmemcached-dev' installed.
+  # Disabling it for the moment.
+  # - pylibmc
   # - dogpile.cache
 
   # - coverage

@@ -2,76 +2,41 @@
 
 # List of packages to install on Debian derivatives.
 workstation_pkgs:
-  - ipython3
-  - python-dev
-  - python3-ipdb
-  - python3-pip
-  - python3-dev
-  - python3-psycopg2
-  - ansible
-  - libinotifytools-dev
-  - silversearcher-ag
-  - xsel
   - pandoc
-  - exuberant-ctags
   - httrack
-  - vagrant
   - gsmartcontrol
   - pgadmin3
   - zeal
-  - gcc
   - wireshark
   - gitk
-  - entr
-  - jmtpfs
-  - jq
-  - pv
-  - progress
-  - debootstrap
-  - redshift-gtk
-  - dos2unix
+  # - debootstrap
+  # - redshift-gtk
   - fusefat
-  - pastebinit
-  - bind9utils
-  - ipcalc
-  - xdotool
-  - xbindkeys
+  - jmtpfs
   - dconf-editor
   - pass
   - qtpass
-  - cmake
-  # random identity generator
-  - rig
   # ASCII banners out of ordinary text (see lolcat for colors)
   - figlet
   - pdfshuffler
-  - lxd
-  - openconnect
-  - network-manager-openconnect
-  - network-manager-openconnect-gnome
-  - network-manager-vpnc-gnome
+  # - openconnect
+  # - network-manager-openconnect
+  # - network-manager-openconnect-gnome
+  # - network-manager-vpnc-gnome
   - network-manager-openvpn-gnome
   - network-manager-ssh
   - network-manager-ssh-gnome
-  - stoken
-  - connect-proxy
-  # to build tmux
-  - libevent-dev
-  - ncurses-dev
-  - yum
+  # - stoken
   # dbus viewer
-  - fortune
   - d-feet
   - pinentry-gnome3
   # - pinentry-gtk2
   # openstack caching
-  - memcached
-  - libmemcached-dev
-  - libz-dev
+  # - memcached
+  # - libmemcached-dev
   - scdaemon
   - pcscd
   - yubikey-personalization-gui
-  # - yubioath-desktop
   # requires x2go ppa
   # - x2goserver
   # - x2goserver-xsession
@@ -85,20 +50,13 @@ workstation_pkgs:
   # # requires ppa
   # - shadowsocks-qt5
   # Pure C implementation
-  - shadowsocks-libev
-  # hub (github from the cli)
-  # - hub
+  # - shadowsocks-libev
   # - python3-yubikey-manager
   # older versions requires
   # - postgresql-client-9.5
   # this requires to add the postgresql repo to access earlier versions
-  # - postgresql-client-9.4
   # - workrave
-  # - lxc
-  # - lxc-templates
-  # - python3-lxc
   # - virtualbox-qt
-  # - urlview
   # - parcellite
   # - pasystray
   # - golang-go
